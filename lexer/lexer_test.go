@@ -4,6 +4,7 @@ import (
 	"monkey/token"
 	"testing"
 )
+
 func TestNextToken(t *testing.T) {
 	input := `
 		let five = 5;
@@ -17,7 +18,6 @@ func TestNextToken(t *testing.T) {
 		!-/*5;
 		5 < 10 > 5;
 	`
-
 	tests := []struct {
 		expectedType    token.TokenType
 		expectedLiteral string

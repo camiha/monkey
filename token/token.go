@@ -3,51 +3,51 @@ package token
 type TokenType string
 
 type Token struct {
-  Type TokenType
-  Literal string
+	Type    TokenType
+	Literal string
 }
 
 const (
-    ILLEGAL = "ILLEGAL"
-    EOF     = "EOF"
+	ILLEGAL = "ILLEGAL"
+	EOF     = "EOF"
 
-    // 識別子 + リテラル
-    IDENT = "IDENT"
-    INT   = "INT"
+	// 識別子 + リテラル
+	IDENT = "IDENT"
+	INT   = "INT"
 
-    // 演算子
-    ASSIGN   = "="
-    PLUS     = "+"
-    MINUS    = "-"
-    BANG     = "!"
-    ASTERISK = "*"
-    SLASH    = "/"
+	// 演算子
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
 
-    LT = "<"
-    GT = ">"
+	LT = "<"
+	GT = ">"
 
-    // デリミタ
-    COMMA     = ","
-    SEMICOLON = ";"
+	// デリミタ
+	COMMA     = ","
+	SEMICOLON = ";"
 
-    LPAREN = "("
-    RPAREN = ")"
-    LBRACE = "{"
-    RBRACE = "}"
+	LPAREN = "("
+	RPAREN = ")"
+	LBRACE = "{"
+	RBRACE = "}"
 
-    // キーワード
-    FUNCTION = "FUNCTION"
-    LET      = "LET"
+	// キーワード
+	FUNCTION = "FUNCTION"
+	LET      = "LET"
 )
 
 var keywords = map[string]TokenType{
-  "fn": FUNCTION,
-  "let": LET,
+	"fn":  FUNCTION,
+	"let": LET,
 }
 
 func LookupIdent(ident string) TokenType {
-  if tok, ok := keywords[ident]; ok {
-    return tok
-  }
-  return IDENT
+	if tok, ok := keywords[ident]; ok {
+		return tok
+	}
+	return IDENT
 }
